@@ -1,9 +1,10 @@
 #pragma once
-
+#include <memory>
 #include <string>
 #include <iostream>
 #include <vector>
-
+#include <cstring>
+#include <cstdint>
 struct zip_archive;
 
 struct zip_info

@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 20)
 if(CMAKE_SYSTEM_NAME STREQUAL Windows)
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
-
+add_compile_definitions(LIBREMIDI_NO_BOOST)
 #
 # LIBRARY: engine
 #
@@ -310,9 +310,9 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${APP_FILES})
 
 
 # explicitly strip dead code
-if (CMAKE_C_COMPILER_ID MATCHES "Clang" AND NOT CMAKE_SYSTEM_NAME STREQUAL Emscripten)
-	target_link_options(Senos PRIVATE LINKER:-dead_strip)
-endif()
+#if (CMAKE_C_COMPILER_ID MATCHES "Clang" AND NOT CMAKE_SYSTEM_NAME STREQUAL Emscripten)
+#	target_link_options(Senos PRIVATE LINKER:--dead_strip)
+#endif()
 
 # this hack removes the xxx-CMakeForceLinker.cxx dummy file
 #set_target_properties(Senos PROPERTIES LINKER_LANGUAGE C)

@@ -365,7 +365,7 @@ namespace sns {
 
 		int64_t ts = getCurrentMilliseconds();
 		if (m_frame > 0) {
-			int64_t fps = 1000LL / maximum(1LL, ts - m_frame_ts);
+			int64_t fps = 1000LL / maximum(1L, ts - m_frame_ts);
 			m_render_fps.add(float(fps));
 		}
 

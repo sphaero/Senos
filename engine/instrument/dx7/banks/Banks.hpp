@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <cstdint>
+#include <cstring>
 
 namespace dx7 {
 
